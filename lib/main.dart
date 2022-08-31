@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Text(
-                          "UserInput",
+                          "Userinpur",
                           style: TextStyle(
                               color: Color(0xfffefbfb),
                               fontSize: 50,
@@ -64,9 +64,18 @@ class _MyAppState extends State<MyApp> {
                   children: [
                     Row(
                       children: [
-                        Button2(),
-                        Button2(),
-                        Button2(),
+                        Button2(
+                          title: "tan",
+                          textcolor: Color(0xff070707),
+                        ),
+                        Button2(
+                          title: "sin",
+                          textcolor: Color(0xff070707),
+                        ),
+                        Button2(
+                          title: "cos",
+                          textcolor: Color(0xff070707),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -74,42 +83,93 @@ class _MyAppState extends State<MyApp> {
                     ),
                     Row(
                       children: [
-                        Button(),
-                        Button(),
-                        Button(),
-                        Button(),
+                        Button(
+                          title: "C",
+                          textcolor: Color(0xff000000),
+                          color: Color(0xffff0a0a),
+                        ),
+                        Button(
+                          title: "/",
+                          color: Color(0xffffa00a),
+                        ),
+                        Button(
+                          title: "%",
+                          color: Color(0xffffa00a),
+                        ),
+                        Button(
+                          title: "x",
+                          color: Color(0xffffa00a),
+                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        Button(),
-                        Button(),
-                        Button(),
-                        Button(),
+                        Button(
+                          title: "7",
+                        ),
+                        Button(
+                          title: "8",
+                        ),
+                        Button(
+                          title: "9",
+                        ),
+                        Button(
+                          title: "-",
+                          color: Color(0xffffa00a),
+                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        Button(),
-                        Button(),
-                        Button(),
-                        Button(),
+                        Button(
+                          title: "4",
+                        ),
+                        Button(
+                          title: "5",
+                        ),
+                        Button(
+                          title: "6",
+                        ),
+                        Button(
+                          title: "+",
+                          color: Color(0xffffa00a),
+                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        Button(),
-                        Button(),
-                        Button(),
-                        Button(),
+                        Button(
+                          title: "1",
+                        ),
+                        Button(
+                          title: "2",
+                        ),
+                        Button(
+                          title: "3",
+                        ),
+                        Button(
+                          title: ".",
+                          color: Color(0xffffa00a),
+                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        Button(),
-                        Button(),
-                        Button(),
-                        Button(),
+                        Button(
+                          title: "0",
+                        ),
+                        Button(
+                          title: "00",
+                        ),
+                        Button(
+                          title: "=",
+                          textcolor: Color(0xff000000),
+                          color: Color(0xff1bef86),
+                        ),
+                        Button(
+                          title: "DEL",
+                          color: Color(0xffff0a0a),
+                        ),
                       ],
                     ),
                   ],
