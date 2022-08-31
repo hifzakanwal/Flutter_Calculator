@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'components.dart';
+
+import 'package:math_expressions/math_expressions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +18,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var userinput = "";
   var answer = "";
+  void equalpress() {
+    Parser p = Parser();
+    Expression expression = p.parse(userinput);
+    ContextModel contextModel = ContextModel();
+
+    double eval = expression.evaluate(EvaluationType.REAL, contextModel);
+    answer = eval.toString();
+    //math expression packagae
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,18 +82,21 @@ class _MyAppState extends State<MyApp> {
                             title: "tan",
                             textcolor: Color(0xff070707),
                             onpress: () {
+                              userinput += 'tan(';
                               setState(() {});
                             }),
                         Button2(
                             title: "sin",
                             textcolor: Color(0xff070707),
                             onpress: () {
+                              userinput += 'sin(';
                               setState(() {});
                             }),
                         Button2(
                             title: "cos",
                             textcolor: Color(0xff070707),
                             onpress: () {
+                              userinput += 'cos(';
                               setState(() {});
                             }),
                       ],
@@ -236,12 +250,17 @@ class _MyAppState extends State<MyApp> {
                             textcolor: Color(0xff000000),
                             color: Color(0xff1bef86),
                             onpress: () {
+                              equalpress();
+
                               setState(() {});
                             }),
                         Button(
                           title: "DEL",
                           color: Color(0xffff0a0a),
                           onpress: () {
+                            userinput =
+                                userinput.substring(0, userinput.length - 1);
+
                             setState(() {});
                           },
                         ),
