@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,39 +17,106 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
           backgroundColor: Colors.black,
-          body: button(),
-        ));
-  }
-}
-
-class button extends StatefulWidget {
-  const button({Key? key}) : super(key: key);
-
-  @override
-  State<button> createState() => _buttonState();
-}
-
-class _buttonState extends State<button> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 60,
-      child: Center(
-        child: Text(
-          "1",
-          style: TextStyle(
-              color: Color(0xff080808),
-              fontSize: 25,
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Color(0xffa5a5a5),
-      ),
+          body: Column(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Text(
+                          "UserInput",
+                          style: TextStyle(
+                              color: Color(0xfffefbfb),
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Text(
+                        "Answer",
+                        style: TextStyle(
+                            color: Color(0xff1bef86),
+                            fontSize: 38,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.white24,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Expanded(
+                flex: 4,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Button2(),
+                        Button2(),
+                        Button2(),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        Button(),
+                        Button(),
+                        Button(),
+                        Button(),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Button(),
+                        Button(),
+                        Button(),
+                        Button(),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Button(),
+                        Button(),
+                        Button(),
+                        Button(),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Button(),
+                        Button(),
+                        Button(),
+                        Button(),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Button(),
+                        Button(),
+                        Button(),
+                        Button(),
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
+          )),
     );
   }
 }
