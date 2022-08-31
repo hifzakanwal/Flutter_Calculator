@@ -14,6 +14,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var userinput = "";
+  var answer = "";
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,7 +36,7 @@ class _MyAppState extends State<MyApp> {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Text(
-                          "Userinpur",
+                          userinput.toString(),
                           style: TextStyle(
                               color: Color(0xfffefbfb),
                               fontSize: 50,
@@ -41,7 +44,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                       Text(
-                        "Answer",
+                        answer.toString(),
                         style: TextStyle(
                             color: Color(0xff1bef86),
                             fontSize: 38,
@@ -65,17 +68,23 @@ class _MyAppState extends State<MyApp> {
                     Row(
                       children: [
                         Button2(
-                          title: "tan",
-                          textcolor: Color(0xff070707),
-                        ),
+                            title: "tan",
+                            textcolor: Color(0xff070707),
+                            onpress: () {
+                              setState(() {});
+                            }),
                         Button2(
-                          title: "sin",
-                          textcolor: Color(0xff070707),
-                        ),
+                            title: "sin",
+                            textcolor: Color(0xff070707),
+                            onpress: () {
+                              setState(() {});
+                            }),
                         Button2(
-                          title: "cos",
-                          textcolor: Color(0xff070707),
-                        ),
+                            title: "cos",
+                            textcolor: Color(0xff070707),
+                            onpress: () {
+                              setState(() {});
+                            }),
                       ],
                     ),
                     SizedBox(
@@ -84,91 +93,157 @@ class _MyAppState extends State<MyApp> {
                     Row(
                       children: [
                         Button(
-                          title: "C",
-                          textcolor: Color(0xff000000),
-                          color: Color(0xffff0a0a),
-                        ),
+                            title: "C",
+                            textcolor: Color(0xff000000),
+                            color: Color(0xffff0a0a),
+                            onpress: () {
+                              userinput = "";
+                              answer = "";
+                              setState(() {});
+                            }),
                         Button(
                           title: "/",
                           color: Color(0xffffa00a),
+                          onpress: () {
+                            userinput += '/';
+                            setState(() {});
+                          },
                         ),
                         Button(
-                          title: "%",
-                          color: Color(0xffffa00a),
-                        ),
+                            title: "%",
+                            color: Color(0xffffa00a),
+                            onpress: () {
+                              userinput += '%';
+                              setState(() {});
+                            }),
                         Button(
-                          title: "x",
-                          color: Color(0xffffa00a),
-                        ),
+                            title: "x",
+                            color: Color(0xffffa00a),
+                            onpress: () {
+                              userinput += 'x';
+                              setState(() {});
+                            }),
                       ],
                     ),
                     Row(
                       children: [
                         Button(
-                          title: "7",
-                        ),
+                            title: "7",
+                            onpress: () {
+                              userinput += '7';
+                              setState(() {});
+                            }),
                         Button(
                           title: "8",
+                          onpress: () {
+                            userinput += '8';
+                            setState(() {});
+                          },
                         ),
                         Button(
-                          title: "9",
-                        ),
+                            title: "9",
+                            onpress: () {
+                              userinput += '9';
+                              setState(() {});
+                            }),
                         Button(
-                          title: "-",
-                          color: Color(0xffffa00a),
-                        ),
+                            title: "-",
+                            color: Color(0xffffa00a),
+                            onpress: () {
+                              userinput += '-';
+                              setState(() {});
+                            }),
                       ],
                     ),
                     Row(
                       children: [
                         Button(
-                          title: "4",
-                        ),
+                            title: "4",
+                            onpress: () {
+                              userinput += '4';
+                              setState(() {});
+                            }),
                         Button(
                           title: "5",
+                          onpress: () {
+                            userinput += '5';
+                            setState(() {});
+                          },
                         ),
                         Button(
-                          title: "6",
-                        ),
+                            title: "6",
+                            onpress: () {
+                              userinput += '6';
+                              setState(() {});
+                            }),
                         Button(
-                          title: "+",
-                          color: Color(0xffffa00a),
-                        ),
+                            title: "+",
+                            color: Color(0xffffa00a),
+                            onpress: () {
+                              userinput += '+';
+                              setState(() {});
+                            }),
                       ],
                     ),
                     Row(
                       children: [
                         Button(
-                          title: "1",
-                        ),
+                            title: "1",
+                            onpress: () {
+                              userinput += '1';
+                              setState(() {});
+                            }),
                         Button(
                           title: "2",
+                          onpress: () {
+                            userinput += '2';
+                            setState(() {});
+                          },
                         ),
                         Button(
-                          title: "3",
-                        ),
+                            title: "3",
+                            onpress: () {
+                              userinput += '3';
+                              setState(() {});
+                            }),
                         Button(
-                          title: ".",
-                          color: Color(0xffffa00a),
-                        ),
+                            title: ".",
+                            color: Color(0xffffa00a),
+                            onpress: () {
+                              userinput += '.';
+
+                              setState(() {});
+                            }),
                       ],
                     ),
                     Row(
                       children: [
                         Button(
-                          title: "0",
-                        ),
+                            title: "0",
+                            onpress: () {
+                              userinput += '0';
+                              setState(() {});
+                            }),
                         Button(
                           title: "00",
+                          onpress: () {
+                            userinput += '00';
+                            setState(() {});
+                          },
                         ),
                         Button(
-                          title: "=",
-                          textcolor: Color(0xff000000),
-                          color: Color(0xff1bef86),
-                        ),
+                            title: "=",
+                            textcolor: Color(0xff000000),
+                            color: Color(0xff1bef86),
+                            onpress: () {
+                              setState(() {});
+                            }),
                         Button(
                           title: "DEL",
                           color: Color(0xffff0a0a),
+                          onpress: () {
+                            setState(() {});
+                          },
                         ),
                       ],
                     ),
